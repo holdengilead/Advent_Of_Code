@@ -4,11 +4,7 @@ Day 04 - 2020. https://adventofcode.com/2020/day/4
 
 
 def valid_passport(passport: set[str]) -> bool:
-    return (
-        True
-        if len(passport) == 8 or (len(passport) == 7 and "cid" not in passport)
-        else False
-    )
+    return len(passport) == 8 or (len(passport) == 7 and "cid" not in passport)
 
 
 def main(name_file: str) -> int:
