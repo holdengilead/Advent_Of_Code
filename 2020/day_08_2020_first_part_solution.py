@@ -7,13 +7,13 @@ def main(name_file: str) -> int:
     """
     Main function.
     """
-    accumulator = 0
     operations = []
     with open(name_file, encoding="utf-8") as file:
         for line in file:
             operation, value = line.strip().split(" ")
             operations.append((operation, int(value)))
     to_execute = 0
+    accumulator = 0
     while True:
         if operations[to_execute] is None:
             return accumulator
