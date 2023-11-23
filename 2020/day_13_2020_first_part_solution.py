@@ -21,9 +21,7 @@ def main(name_file: str) -> int:
         bus_min_wait = None
         for bus in buses:
             wait_time = (
-                0
-                if earliest_departure % bus == 0
-                else ((earliest_departure // bus) * bus + bus) - earliest_departure
+                0 if earliest_departure % bus == 0 else bus - (earliest_departure % bus)
             )
             if wait_time < min_wait:
                 min_wait = wait_time
